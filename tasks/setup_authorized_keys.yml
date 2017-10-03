@@ -1,0 +1,6 @@
+- name: "Set up autorized keys for superuser ({{ ssh_superuser_username }})"
+  authorized_key:
+    user: "{{ ssh_superuser_username }}"
+    key: "{{ ssh_superuser_authorized_keys|join('\n') }}"
+    exclusive: yes
+

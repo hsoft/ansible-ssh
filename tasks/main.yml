@@ -1,0 +1,10 @@
+- include_vars: "{{ ansible_distribution }}_{{ ansible_distribution_release }}.yml"
+
+- include: remove_accept_env.yml
+  when: ssh_remove_accept_env
+
+- include: setup_authorized_keys.yml
+  when: ssh_superuser_authorized_keys
+
+- include: disable_password.yml
+  when: ssh_disable_password

@@ -1,0 +1,10 @@
+# Ensures that the AcceptEnv option is not present in the sshd config.
+ssh_remove_accept_env: no
+
+# Disables password authentication
+ssh_disable_password: no
+
+# List of *exclusive* authorized keys for the target system's superuser (root by defaut)
+# If empty, we don't do anything and leave the system as-is
+ssh_superuser_authorized_keys: []
+ssh_superuser_username: root
